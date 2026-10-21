@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+build/
+dist/
+.pytest_cache/
+.ruff_cache/
+
+# Secrets — never commit
+.env
+.env.*
+*.pem
+*.key
+
+# Data: raw downloads stay local unless small and redistributable
+data/raw/*
+!data/raw/.gitkeep
+
+# Generated output (commit only curated examples explicitly)
+outputs/charts/*
+!outputs/charts/.gitkeep
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store

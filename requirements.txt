@@ -1,0 +1,3 @@
+# Installs the package in editable mode with development tools.
+# Runtime dependencies are declared in pyproject.toml.
+-e .[dev]
