@@ -5,9 +5,11 @@
 A Python-powered, open-source tracker comparing EU27, US, and Chinese AI ecosystems
 through transparent, reproducible data.
 
-> **Status: v0.0.x — data pipeline.** `data/processed/indicators.csv` holds sourced
-> observations for five indicators, with charts, a summary table and a local dashboard. See
-> [`docs/data_sources.md`](docs/data_sources.md) for sources, licences and caveats.
+[![tests](https://github.com/ypsman75/ai-competitiveness-tracker/actions/workflows/tests.yml/badge.svg)](https://github.com/ypsman75/ai-competitiveness-tracker/actions/workflows/tests.yml)
+
+> **Status: v0.1.0 — evidence baseline.** Five sourced indicators, reproducible charts, a
+> summary table and an offline dashboard. See [`docs/data_sources.md`](docs/data_sources.md)
+> for sources, licences and caveats, and [Limitations](#limitations) before drawing conclusions.
 
 ## Scope
 
@@ -71,6 +73,17 @@ Regenerated from `data/processed/indicators.csv`; the latest values with caveats
 ![AI research publications](outputs/charts/ai_publications.png)
 ![R&D expenditure, % of GDP](outputs/charts/gerd_pct_gdp.png)
 ![EU27 enterprises using AI, context only](outputs/charts/ai_enterprise_adoption_eu27.png)
+
+## Limitations
+
+- **AI VC covers 2025 only**, transcribed from the OECD brief; the underlying Preqin series
+  is not openly redistributable. One year of a volatile, mega-deal-driven market is a snapshot,
+  not a trend.
+- **Publications** measure volume, not quality or capability, and depend on OpenAlex's topic
+  classifier. The latest year is provisional.
+- **R&D intensity** is total R&D, not AI-specific. EU27 values are OECD estimates.
+- **Enterprise AI adoption** is EU27-only context: no comparable US or China series exists.
+- No composite score, no causal claims about policy.
 
 ## License
 

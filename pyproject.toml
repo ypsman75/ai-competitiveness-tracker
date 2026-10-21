@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "ai-competitiveness"
-version = "0.0.1"
+version = "0.1.0"
 description = "AI competitiveness tracker comparing EU27, United States and China using transparent public data."
 readme = "README.md"
 license = "MIT"
