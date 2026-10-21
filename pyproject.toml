@@ -15,6 +15,7 @@ dependencies = [
     "matplotlib>=3.9",
     "requests>=2.32",
     "streamlit>=1.40",
+    "altair>=5.4",
 ]
 
 [project.optional-dependencies]

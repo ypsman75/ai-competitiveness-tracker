@@ -6,7 +6,7 @@ A Python-powered, open-source tracker comparing EU27, US, and Chinese AI ecosyst
 through transparent, reproducible data.
 
 > **Status: v0.0.x — data pipeline.** `data/processed/indicators.csv` holds sourced
-> observations for five indicators, with charts and a summary table; the dashboard comes next. See
+> observations for five indicators, with charts, a summary table and a local dashboard. See
 > [`docs/data_sources.md`](docs/data_sources.md) for sources, licences and caveats.
 
 ## Scope
@@ -37,6 +37,17 @@ python -m ai_competitiveness.report            # write outputs/summary.md
 python -m pytest                               # run tests (no network)
 ruff check . && ruff format --check .          # lint
 ```
+
+## Dashboard
+
+```bash
+streamlit run app/dashboard.py     # opens http://localhost:8501
+```
+
+The dashboard reads only `data/processed/indicators.csv`: no network calls, no keys, and
+Streamlit telemetry is switched off in `.streamlit/config.toml`. Pick a metric to see the
+EU27 / US / China comparison, hover for values and status, and expand the definition,
+source, licence and methodology notes. Geographies without comparable data say why.
 
 `build_data` needs internet access and no credentials. OpenAlex queries fit its anonymous
 daily allowance; set `OPENALEX_API_KEY` (free) to use your own budget. Never commit it.

@@ -1,0 +1,15 @@
+# Offline, local-only dashboard: no telemetry, light theme (palette validated on light).
+[browser]
+gatherUsageStats = false
+
+[client]
+toolbarMode = "viewer"
+
+[server]
+headless = true
+
+[theme]
+base = "light"
+primaryColor = "#2a78d6"
+backgroundColor = "#fcfcfb"
+textColor = "#0b0b0b"
