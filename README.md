@@ -5,9 +5,9 @@
 A Python-powered, open-source tracker comparing EU27, US, and Chinese AI ecosystems
 through transparent, reproducible data.
 
-> **Status: v0.0.1 — project skeleton.** No indicators are published yet. Data sources
-> are under review (see [`docs/implementation_plan.md`](docs/implementation_plan.md)).
-> Nothing in this repository should be read as a finding until sourced data is added.
+> **Status: v0.0.x — data pipeline.** `data/processed/indicators.csv` holds sourced
+> observations for five indicators; charts and the dashboard come next. See
+> [`docs/data_sources.md`](docs/data_sources.md) for sources, licences and caveats.
 
 ## Scope
 
@@ -28,12 +28,26 @@ python -m pip install -r requirements.txt
 ## Commands
 
 ```bash
-python -m ai_competitiveness --help   # package entry point
-python -m pytest                      # run tests
-ruff check .                          # lint
+python -m ai_competitiveness --help            # list commands
+python -m ai_competitiveness.validate_data     # validate data/processed/indicators.csv
+python -m ai_competitiveness.build_data --dry-run   # fetch sources, validate, show diff
+python -m ai_competitiveness.build_data        # rebuild the dataset (network required)
+python -m pytest                               # run tests (no network)
+ruff check . && ruff format --check .          # lint
 ```
 
-Data validation, chart generation and the dashboard will be added in later steps.
+`build_data` needs internet access and no credentials. OpenAlex queries fit its anonymous
+daily allowance; set `OPENALEX_API_KEY` (free) to use your own budget. Never commit it.
+
+## Indicators
+
+| Indicator | EU27 | US | China | Scope |
+|---|---|---|---|---|
+| AI VC received, by location of AI firm (2025, OECD/Preqin) | ✅ | ✅ | ✅ | headline |
+| AI VC invested, by location of investor (2025, OECD/Preqin) | ✅ | ✅ | ✅ | headline |
+| AI research publications (2015–2025, OpenAlex) | ✅ | ✅ | ✅ | headline |
+| R&D expenditure, % of GDP (2010–2024, OECD MSTI) | ✅ | ✅ | ✅ | headline (not AI-specific) |
+| Enterprises using AI (2021–2025, Eurostat) | ✅ | not comparable | not available | EU27 context only |
 
 ## License
 

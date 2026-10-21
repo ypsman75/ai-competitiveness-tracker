@@ -1,6 +1,6 @@
 # Data sources — Step C source review
 
-**Review date:** 2026-10-21 · **Status:** awaiting owner go/no-go (spec V2.1, amendment 7)
+**Review date:** 2026-10-21 · **Status:** approved by owner 2026-10-21: indicators 1–3 as headline (VC split into destination and investor origin), indicator 4 as EU27-only context
 
 This file is the source manifest required by spec §9. It is written **before** any
 observation enters `data/processed/`. Values quoted below are evidence gathered during the
