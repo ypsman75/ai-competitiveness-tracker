@@ -7,6 +7,8 @@ through transparent, reproducible data.
 
 [![tests](https://github.com/ypsman75/ai-competitiveness-tracker/actions/workflows/tests.yml/badge.svg)](https://github.com/ypsman75/ai-competitiveness-tracker/actions/workflows/tests.yml)
 
+**Live dashboard:** https://ai-competitiveness-tracker.streamlit.app
+
 > **Status: v0.1.0 — evidence baseline.** Five sourced indicators, reproducible charts, a
 > summary table and an offline dashboard. See [`docs/data_sources.md`](docs/data_sources.md)
 > for sources, licences and caveats, and [Limitations](#limitations) before drawing conclusions.

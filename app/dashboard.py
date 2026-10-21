@@ -51,12 +51,15 @@ def chart(rows: pd.DataFrame, unit: str) -> alt.Chart:
     base = alt.Chart(rows).encode(
         x=alt.X("year:Q", title=None, axis=alt.Axis(format="d", tickMinStep=1)),
         y=alt.Y("value:Q", title=unit, scale=alt.Scale(zero=True)),
-        color=color,
     )
-    lines = base.mark_line(strokeWidth=2)
+    lines = base.mark_line(strokeWidth=2).encode(color=color)
     points = base.mark_point(size=60, strokeWidth=2, filled=True, opacity=1).encode(
         stroke=alt.Stroke("Geography:N", scale=geo_scale(), legend=None),
-        fill=alt.condition("datum.uncertain", alt.value(SURFACE), color),
+        fill=alt.condition(
+            "datum.uncertain",
+            alt.value(SURFACE),
+            alt.Fill("Geography:N", scale=geo_scale(), legend=None),
+        ),
         tooltip=tooltip,
     )
     return (lines + points).properties(height=380)
