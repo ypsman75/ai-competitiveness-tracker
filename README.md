@@ -6,7 +6,7 @@ A Python-powered, open-source tracker comparing EU27, US, and Chinese AI ecosyst
 through transparent, reproducible data.
 
 > **Status: v0.0.x — data pipeline.** `data/processed/indicators.csv` holds sourced
-> observations for five indicators; charts and the dashboard come next. See
+> observations for five indicators, with charts and a summary table; the dashboard comes next. See
 > [`docs/data_sources.md`](docs/data_sources.md) for sources, licences and caveats.
 
 ## Scope
@@ -32,6 +32,8 @@ python -m ai_competitiveness --help            # list commands
 python -m ai_competitiveness.validate_data     # validate data/processed/indicators.csv
 python -m ai_competitiveness.build_data --dry-run   # fetch sources, validate, show diff
 python -m ai_competitiveness.build_data        # rebuild the dataset (network required)
+python -m ai_competitiveness.charts            # regenerate outputs/charts/*.png
+python -m ai_competitiveness.report            # write outputs/summary.md
 python -m pytest                               # run tests (no network)
 ruff check . && ruff format --check .          # lint
 ```
@@ -48,6 +50,16 @@ daily allowance; set `OPENALEX_API_KEY` (free) to use your own budget. Never com
 | AI research publications (2015–2025, OpenAlex) | ✅ | ✅ | ✅ | headline |
 | R&D expenditure, % of GDP (2010–2024, OECD MSTI) | ✅ | ✅ | ✅ | headline (not AI-specific) |
 | Enterprises using AI (2021–2025, Eurostat) | ✅ | not comparable | not available | EU27 context only |
+
+## Charts
+
+Regenerated from `data/processed/indicators.csv`; the latest values with caveats are in
+[`outputs/summary.md`](outputs/summary.md).
+
+![AI venture capital, 2025](outputs/charts/ai_vc_2025.png)
+![AI research publications](outputs/charts/ai_publications.png)
+![R&D expenditure, % of GDP](outputs/charts/gerd_pct_gdp.png)
+![EU27 enterprises using AI, context only](outputs/charts/ai_enterprise_adoption_eu27.png)
 
 ## License
 

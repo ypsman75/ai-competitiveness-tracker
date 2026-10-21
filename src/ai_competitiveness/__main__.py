@@ -8,6 +8,8 @@ COMMANDS = """commands:
   python -m ai_competitiveness.validate_data   validate data/processed/indicators.csv
   python -m ai_competitiveness.build_data      fetch sources and rebuild the dataset
                                                (--dry-run to validate without writing)
+  python -m ai_competitiveness.charts          regenerate outputs/charts/*.png
+  python -m ai_competitiveness.report          write outputs/summary.md
 """
 
 

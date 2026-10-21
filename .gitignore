@@ -19,9 +19,7 @@ dist/
 data/raw/*
 !data/raw/.gitkeep
 
-# Generated output (commit only curated examples explicitly)
-outputs/charts/*
-!outputs/charts/.gitkeep
+# outputs/ is committed: charts and summary are regenerated from data/processed
 
 # Editors / OS
 .vscode/
